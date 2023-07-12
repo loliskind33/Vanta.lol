@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanta - Scripts</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lua-list li {
+            background-color: #1f1f1f;
+            color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-family: 'Open Sans', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .lua-list li h2 {
+            font-size: 24px;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    
+        .lua-list li p {
+            font-size: 16px;
+            margin-top: 0;
+        }
+    
+        .lua-code {
+            background-color: #2d2d2d;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+            margin-top: 10px;
+        }
+    
+        .lua-code code {
+            display: block;
+            white-space: pre-line;
+            font-family: 'Courier New', Courier, monospace;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-wrap: normal;
+            word-wrap: normal;
+            white-space: pre;
+            overflow: auto;
+            tab-size: 4;
+        }
+    
+        .function {
+            color: #78c9ff;
+        }
+
+        .string {
+            color: #81a1c1;
+        }
+        
+        .comment {
+            color: #50fa7b;
+        }
+        
+        .comment span {
+            color: #50fa7b;
+        }
+        
+        .keyword {
+            color: #78c9ff;
+            font-weight: bold;
+        }
+        
+        .lua-list li a {
+            color: #78c9ff;
+            text-decoration: none;
+        }
+    
+        .lua-list li a:hover {
+            text-decoration: underline;
+        }
+
+        .lua-list li a:visited {
+            color: #78c9ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="center-heading slide-down">Vanta Cheats - Scripts</h1>
+        <div class="menu-button" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <div class="overlay"></div>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="scripts.html">Scripts</a></li>
+            <li><a href="https://discord.gg/mbQuc2REhG">Discord</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <ul class="lua-list">
+            <li>
+                <h2>Outfit Ideas Shop</h2>
+                <p><a href="#">https://www.roblox.com/games/8730535974/Outfit-Ideas-Shop</a></p>
+                <div class="lua-code">
+                    <code>
+workspace.FallenPartsDestroyHeight = -999999 -- So you don't die from the void
+
+local replicatedStorage = game:GetService("ReplicatedStorage")
+local pkg = replicatedStorage:WaitForChild("Packages")
+local remoteFunction = pkg:WaitForChild("Knit"):WaitForChild("Services"):WaitForChild("AvatarService"):WaitForChild("RF"):WaitForChild("SetScale")
+
+-- 1 is default for all of those
+remoteFunction:InvokeServer("Width", 1)
+remoteFunction:InvokeServer("Depth", 1)
+remoteFunction:InvokeServer("Height", 1)
+remoteFunction:InvokeServer("Head", 1)
+remoteFunction:InvokeServer("BodyType", 1)
+remoteFunction:InvokeServer("Proportion", 1)
+                    </code>
+                </div>
+            </li>
+            <li>
+                <h2>Jailbreak Teleport</h2>
+                <p><a href="#">https://www.roblox.com/games/606849621/Jailbreak</a></p>
+                <div class="lua-code">
+                    <code>
+-- // TO USE YOU MUST STAND IN AN OPEN AREA \\--
+getgenv().location = "bank"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Merzttt/jailbreak/main/teleport.lua"))()
+--[[ 
+    Locations:
+    "bank"
+    "escape"
+    "jewl bottom"
+    "jewl top"
+    "museum"
+    "power plant"
+    "gas station"
+    "donut shop"
+    "casino"
+    "mansion"
+    "trading plaza"
+    "tomb"
+    "airport"
+--]]
+                    </code>
+                </div>
+            </li>
+        </ul>        
+    </main>
+    
+    <script src="scripts.js"></script>
+    <script>
+        // Define the Lua keywords and syntax elements
+        const luaSyntax = [
+            'workspace',
+            'game',
+            'ReplicatedStorage',
+            'Packages',
+            'Knit',
+            'Services',
+            'AvatarService',
+            'RF',
+            'SetScale',
+            'local',
+            'end',
+            'function',
+            'InvokeServer',
+        ];
+    
+        // Highlight Lua keywords and syntax elements in the code blocks
+        function highlightLuaCode() {
+            const codeBlocks = document.querySelectorAll('.lua-code code');
+            codeBlocks.forEach((codeBlock) => {
+                const codeText = codeBlock.textContent;
+                let highlightedHTML = codeText;
+    
+                // Highlight strings in double quotes
+                highlightedHTML = highlightedHTML.replace(
+                    /"([^"]+)"/g,
+                    '<span class="string">"$1"</span>'
+                );
+    
+                // Highlight strings in single quotes
+                highlightedHTML = highlightedHTML.replace(
+                    /'([^']+)'/g,
+                    '<span class="string">\'$1\'</span>'
+                );
+    
+                // Highlight comments and comment text
+                highlightedHTML = highlightedHTML.replace(
+                    /(--.*)/g,
+                    '<span class="comment">$1</span>'
+                );
+    
+                // Highlight multi-line comments and comment text
+                highlightedHTML = highlightedHTML.replace(
+                    /(\-\-\[\[)([\s\S]*?)(\]\]\-\-)/g,
+                    '<span class="comment">$1<span>$2</span>$3</span>'
+                );
+    
+                // Highlight Lua keywords
+                const keywordsRegex = new RegExp(`\\b(${luaSyntax.join('|')})\\b`, 'g');
+                highlightedHTML = highlightedHTML.replace(
+                    keywordsRegex,
+                    '<span class="keyword">$&</span>'
+                );
+    
+                // Highlight numbers
+                highlightedHTML = highlightedHTML.replace(
+                    /(\b|\D)(-?\d+(\.\d+)?)(\b|\D)/g,
+                    '$1<span class="number">$2</span>$4'
+                );
+    
+                codeBlock.innerHTML = highlightedHTML;
+            });
+        }
+    
+        // Call the function to highlight Lua code on page load
+        highlightLuaCode();
+    </script>
+    
+</body>
+</html>
