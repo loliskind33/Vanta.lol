@@ -178,3 +178,8 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.youtube-video {
+    text-align: center;
+    margin-top: 20px; /* Adjust as needed to control the spacing */
+}
