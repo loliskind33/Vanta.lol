@@ -35,10 +35,42 @@
             </div>
             <h3>Username: <span id="username">Your Username</span></h3>
             <p id="bio">Your Bio</p>
-            <button onclick="editProfile()">Edit Profile</button>
+            <button id="editButton" onclick="editProfile()">Edit Profile</button>
         </div>
     </main>
     
     <script src="scripts.js"></script>
+    <script>
+        // Function to toggle between displaying text and textboxes
+        function editProfile() {
+            const usernameElement = document.getElementById("username");
+            const bioElement = document.getElementById("bio");
+            const editButton = document.getElementById("editButton");
+
+            if (editButton.innerText === "Edit Profile") {
+                // Switch to editing mode
+                const newUsername = document.createElement("input");
+                newUsername.value = usernameElement.innerText;
+                usernameElement.innerHTML = "";
+                usernameElement.appendChild(newUsername);
+
+                const newBio = document.createElement("textarea");
+                newBio.value = bioElement.innerText;
+                bioElement.innerHTML = "";
+                bioElement.appendChild(newBio);
+
+                editButton.innerText = "Save";
+            } else {
+                // Save and switch back to view mode
+                const newUsername = usernameElement.querySelector("input");
+                const newBio = bioElement.querySelector("textarea");
+
+                usernameElement.innerHTML = newUsername.value;
+                bioElement.innerHTML = newBio.value;
+
+                editButton.innerText = "Edit Profile";
+            }
+        }
+    </script>
 </body>
 </html>
