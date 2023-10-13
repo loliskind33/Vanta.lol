@@ -65,25 +65,8 @@
                 const newUsername = usernameElement.querySelector("input");
                 const newBio = bioElement.querySelector("textarea");
 
-                // Send the updated profile data to the server
-                fetch('/updateProfile', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        username: newUsername.value,
-                        bio: newBio.value,
-                    }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    usernameElement.innerHTML = data.username;
-                    bioElement.innerHTML = data.bio;
-                })
-                .catch(error => {
-                    console.error('Error updating profile:', error);
-                });
+                usernameElement.innerHTML = newUsername.value;
+                bioElement.innerHTML = newBio.value;
 
                 editButton.innerText = "Edit Profile";
             }
