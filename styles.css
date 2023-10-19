@@ -224,3 +224,24 @@ body {
     color: #fff; /* Footer link color */
     font-weight: bold;
 }
+
+.rounded-rectangle {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  border-radius: 20px;
+  margin: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.rounded-rectangle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rounded-rectangle:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 15px #ffffff;
+}
