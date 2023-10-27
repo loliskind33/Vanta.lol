@@ -13,3 +13,21 @@ header {
 main {
     padding: 20px;
 }
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.cool-image {
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 25px;
+    transition: transform .2s ease-in-out;
+}
+
+.cool-image:hover {
+    transform: scale(1.1);
+}
