@@ -1,0 +1,6 @@
+[data-sellix-product] * {
+    pointer-events: none;
+}
+[data-sellix-group] * {
+    pointer-events: none;
+}
