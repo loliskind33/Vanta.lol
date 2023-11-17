@@ -1,20 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Vanta</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanta Mod Menu</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .bg {
+    background-image: radial-gradient(circle, #2b2b2b, #1f1c2c, #100b36, #000);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+  }
+  
+  .discord-btn {
+    position: absolute;
+    top: 60%;
+    left: 25%;
+    background-color: #5865F2;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .discord-btn:hover {
+    background-color: #404EED;
+  }
+
+  .placeholder {
+    position: absolute;
+    top: 60%;
+    right: 25%;
+    width: 200px;
+    height: 300px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+</style>
 </head>
 <body>
-    <header>
-        <h1>Vanta</h1>
-    </header>
-    <main>
-        <div class="image-container">
-            <img class="cool-image" src="Images/game1.png" alt="Game 1">
-            <img class="cool-image" src="Images/game2.png" alt="Game 2">
-            <img class="cool-image" src="Images/game3.png" alt="Game 3">
-        </div>
-    </main>
+
+<div class="bg">
+  <div class="info">
+    <h1>Vanta Mod Menu</h1>
+    <p>The most powerful mod menu for Gorilla Tag</p>
+  </div>
+  <a href="YOUR_DISCORD_INVITE_LINK" class="discord-btn">Join Discord</a>
+  <div class="placeholder">Mod Menu Screenshot Here</div>
+</div>
+
 </body>
 </html>
