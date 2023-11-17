@@ -1,85 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vanta Mod Menu</title>
-<style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .bg {
-    background-image: radial-gradient(circle, #2b2b2b, #1f1c2c, #100b36, #000);
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  
-  .info {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-  }
-  
-  .discord-btn {
-    position: absolute;
-    top: 60%;
-    left: 25%;
-    background-color: #5865F2;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  .discord-btn:hover {
-    background-color: #404EED;
-  }
-
-  .top-left-image img {
-    position: absolute;
-    top: 20px; /* Adjust as needed for spacing from the top */
-    left: 20px; /* Adjust as needed for spacing from the left */
-    border-radius: 20px; /* Rounded corners for the image */
-    /* Set width and height if necessary, or use max-width/max-height for responsiveness */
-  }
-
-  .mod-menu-img {
-    width: 480px; /* Set the width of the image */
-    height: 270px; /* Set the height of the image */
-    border-radius: 20px; /* Rounded corners for the image */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
-  }
-
-  .mod-menu-img:hover {
-    transform: scale(1.05); /* Slightly enlarges the image on hover */
-  }
-  
-</style>
-</head>
 <body>
-
-<div class="bg">
-  <!-- Adjusted placement of the top-left image -->
-  <div class="top-left-image">
-    <img src="productimage.png" alt="Mod Menu Image" class="mod-menu-img"/>
-  </div>
-  <div class="info">
-    <h1>Vanta Mod Menu</h1>
-    <p>The most powerful mod menu for Gorilla Tag</p>
-  </div>
-  <a href="https://discord.gg/3At6rMcKhv" class="discord-btn">Join Discord</a>
+  <header>
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <a href="/" class="brand">Displyy</a>
+      <ul class="nav-list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/tos">Terms Of Service</a></li>
+          <li><a href="/support">Support</a></li>
+      </ul>
+    </nav>
   
-</div>
+    <div class="user-controls">
+        <button class="login-btn" onclick="location.href='/login';">
+            <i class="material-icons">login</i>
+            Login
+        </button>
+    </div>
+  </header>
+    <section id="showcase">
+        <div class="content">
+            <h1>Displyy Mod Menu</h1>
+            <span class="price">$24.99</span>
+            <p>Most Overpowered Mod Menu for Gorilla Tag</p>
+            <button id="buyNowBtn">Buy Now</button>
+        </div>
+        <img src="productimage.png" alt="Product Image">
+    </section>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+          <span class="close">×</span>
+          <h2>Choose a Payment Method</h2>
+          
+          <button id="sellixBtn" data-sellix-product="639f324bac6fc" type="submit" alt="Buy Now with sellix.io">Buy with Sellix (PayPal, IDeal or Credit Card)</button>
+          <button id="spezzBtn">Buy on Spezz Exchange</button>
+          <p>By purchasing Displyy Mod Menu you agree to our <a href="/tos" target="_blank">Terms of Service</a>.</p>
+      </div>
+    </div>
+    <section id="features">
+      <h2>Here's What We Have To Offer</h2>      
+      <div class="feature">
+        <i class="material-icons" style="font-size: 50px; color: #4b64d4;">update</i>
+        <h3>Regular Updates</h3>
+        <p>Enjoy frequent updates for new features, improvements, and game updates.</p>
+      </div>
+    
+    
+    <div class="feature">
+      <i class="material-icons" style="font-size: 50px; color: #4b64d4;">hourglass_empty</i>
+      <h3>Trusted Legacy</h3>
+      <p>Count on a product that's been around since the beginning of Gorilla Tag.</p>
+    </div>
+    
+    <div class="feature">
+      <i class="material-icons" style="font-size: 50px; color: #4b64d4;">rocket_launch</i>
+      <h3>Overpowered Features</h3>
+      <p>The best Gorilla Tag mod menu known for its overpowered features.</p>
+    </div>
+    
+  </section>
 
-</body>
-</html>
+  <section id="faq">
+    <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            <h3>How do I purchase the product?</h3>
+            <i class="material-icons">add</i> 
+        </div>
+        <p class="faq-answer">You can purchase the product by clicking the "Buy Now" button and following the checkout process.</p>
+    </div>
+    
+    <div class="faq-item">
+        <div class="faq-question">
+            <h3>Are updates included with the purchase?</h3>
+            <i class="material-icons">add</i> 
+        </div>
+        <p class="faq-answer">Yes, updates are included. You'll receive regular updates with new features and improvements.</p>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+          <h3>I've purchased the mod menu, how do I get started?</h3>
+          <i class="material-icons">add</i>
+      </div>
+      <p class="faq-answer">To begin using the mod menu, please refer to the instructions provided in the email you received upon purchase. If you haven't received an e-mail go to our <a href="/support" target="_blank">support page</a></p>
+  </div>
+  
+</section>
+
+<footer>
+ <p>© 2021-2023 Displyy. All Rights Reserved.</p>
+</footer>
+
+<script src="moz-extension://403db40e-3a21-4992-8004-46483fde7bbb/js/app.js" type="text/javascript"></script><div id="sellix-container"><div id="sellix-buttons-pointers-fix"><style>[data-sellix-product] * {
+    pointer-events: none;
+}
+[data-sellix-group] * {
+    pointer-events: none;
+}</style></div></div></body>
