@@ -1,7 +1,0 @@
-.SpriteCanvas-module_spriteCanvasHidden__ndzQV {
-  display: none;
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: -100%;
-}
